@@ -1,0 +1,106 @@
+.alert-error {
+  color: #a94442;
+  background: #f2dede;
+  border: #ebccd1;
+}
+
+.alert-success_msg {
+  color: #3c763d;
+  background: #dff0d8;
+  border: #d6e9c6;
+}
+
+.jumbotron {
+  box-shadow: 0 0 10px #000;
+}
+
+.jumbotron.cta {
+  padding: 15% 0;
+  background-image: url("./../img/cta-2.jpg");
+  background-size: cover;
+  background-position: top center;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  margin: 0;
+  height: 100vh;
+}
+
+.jumbotron.courses-cta {
+  background-image: url("./../img/courses-cta.jpg");
+  background-size: cover;
+  background-position: top center;
+  color: #fff;
+  text-shadow: 0 0 10px #000;
+  margin-top: 20px;
+  margin-bottom: 0;
+  height: 100vh;
+}
+
+.courses-cta a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.jumbotron.cta .container {
+  border-left: 8px solid #BD2B00;
+  padding-left: 2em;
+}
+
+.jumbotron .display-4 {
+  color: #ddd;
+}
+
+.btn {
+  background-color: #BD2B00;
+  border: 1px solid #BD2B00;
+}
+
+.btn:hover {
+  background-color: #AC2800;
+  border: 1px solid #AC2800;
+}
+
+.container-courses {
+  box-shadow: 2px 2px 2px #000;
+}
+
+.enroll-form, .enroll-select, #datepicker, .login-form, .register-form {
+  width: 100%;
+  background: none;
+}
+
+.enroll-option {
+  color: #000;
+}
+
+.enroll-select, #datepicker, .form-control {
+  padding: 10px 40px;
+  border-radius: 40px;
+  color: #ddd;
+  font-size: 2em;
+  background: rgba(0,0,0,.2);
+  border: 1px solid #aaa;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.form-control:focus {
+  background: (255,255,255,.2);
+}
+
+.courses h2, .courses h3 {
+  text-align: center;
+  margin: 30px;
+}
+
+.datepicker--day-name {
+  color: #BD2B00;
+}
+
+.datepicker--time-sliders .datepicker--time-row:last-of-type {
+  display: none;
+}
+
+.register-form {
+  display: none;
+}

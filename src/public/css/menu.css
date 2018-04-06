@@ -1,0 +1,57 @@
+.container-shade {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.7);
+  z-index: 9998;
+  cursor: pointer;
+  display: none;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: -305px;
+  height: 100vh;
+  width: 300px;
+  background: #191919;
+  z-index: 9999;
+  box-shadow: 2px 0 5px #000;
+  border-right: 5px solid #BD2B00;
+  padding: 5em 3em;
+}
+
+.pancakes {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: #191919;
+  color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 2em;
+  border-bottom-right-radius: 10px;
+  z-index: 9998;
+  box-shadow: 0 0 5px #000;
+}
+
+.navigation-item a {
+  color: #fff;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navigation-item a:hover {
+  text-decoration: none;
+}
+
+.navigation span {
+  font-size: .75em;
+  padding-right: 10px;
+}

@@ -1,0 +1,125 @@
+extends template
+block content
+  .jumbotron.jumbotron-fluid.cta
+    .container
+      h1.display-3 Motorcycle School on Airfield
+      h2.display-4 Start of courses on 16th of April
+      p.lead 
+        a.btn.btn-primary.btn-lg(href="/enroll") It's time to enroll
+  .container.courses
+    h2 Courses That We Offer
+    h3 Driver Licence Exam Preparation
+    p There are three practice exercises you have to complete on the exam which include maneuvering in a confined space, braking and driving at various speeds, including an emergency stop, parking a bike and leaving a parking spot, and stopping for safe boarding or disembarking of passengers. We cover all of that in our driver licence exam preparation courses which are as follows:
+    .row
+      .col-md
+        .card 
+          img.card-img-top(src="./img/standard.jpg")
+          .card-body 
+            h5.card-title "A" Category exam preparation (standard)
+            h6.card-subtitle.mb-2.text-muted 18 hours | 12000 RUB
+            p.card-text If you have little to no experience in riding a motorcycle, you should consider this course to prepare yourself for GIBDD practice exam. It includes three exercises you have to complete on the exam.
+            a.btn.btn-primary(href="/enroll") Enroll
+      .col-md
+        .card 
+          img.card-img-top(src="./img/express.jpg")
+          .card-body 
+            h5.card-title "A" Category exam preparation (express)
+            h6.card-subtitle.mb-2.text-muted 8 hours | 6000 RUB
+            p.card-text If you have experience in riding a bike and all the sudden you decided to get a driver licence, it is a good idea to complete this course, because riding a bike and pass GIBDD exam are totally different things.
+            a.btn.btn-primary(href="/enroll") Enroll    
+      .col-md
+        .card 
+          img.card-img-top(src="./img/extended.jpg")
+          .card-body 
+            h5.card-title "A" Category exam preparation (extended)
+            h6.card-subtitle.mb-2.text-muted 30 hours | 12000 + 12000 RUB
+            p.card-text Never rode even e bicycle? We can fix this. Extended course is developed for people who has no idea how it is possible to drive anything that has less then 3 wheels.
+            a.btn.btn-primary(href="/enroll") Enroll 
+    h3 After the Exam
+    p If you will, you may also sign up for advanced courses which are useful for beginners. You will learn many helpful tips from our instructors who have great riding experience.
+    .row  
+      .col-md
+        .card 
+          img.card-img-top(src="./img/city.jpg")
+          .card-body 
+            h5.card-title Riding in the big city
+            h6.card-subtitle.mb-2.text-muted 2 hours | 4000 RUB
+            p.card-text There is just one requirement: you own a bike. One of our instructors will show you the safe way of exploitation of your exact model right on the streets of our city.
+            a.btn.btn-primary(href="/enroll") Enroll
+      .col-md
+        .card 
+          img.card-img-top(src="./img/safe.png")
+          .card-body 
+            h5.card-title Safe riding course
+            h6.card-subtitle.mb-2.text-muted 18 + 8 hours | 18000 + 8000 RUB
+            p.card-text Road is full of all kinds of dangerous events that may occur any time. Most of them add up to different categories, most "happenable" of which we cover in this course.
+            a.btn.btn-primary(href="/enroll") Enroll 
+    h3 Other Courses
+    .row
+      .col-md
+        .card 
+          img.card-img-top(src="./img/2hours.jpg")
+          .card-body 
+            h5.card-title Additional 2 hours for any course
+            h6.card-subtitle.mb-2.text-muted 2 hours | 2000 RUB
+            p.card-text If you feel that you didn't get enough experience during attending to any of our courses, you can always buy additional hour (or more). 
+            a.btn.btn-primary(href="/enroll") Enroll 
+      .col-md
+        .card 
+          img.card-img-top(src="./img/trial.jpg")
+          .card-body 
+            h5.card-title Trial Class
+            p.card-text Trial class is created for people who had no experience riding a bike and is willing to figure out if this type of activity and/or transport is for them.
+            a.btn.btn-primary(href="/enroll") Enroll
+      .col-md
+        .card 
+          img.card-img-top(src="./img/stuntriding.jpg")
+          .card-body 
+            h5.card-title Stuntriding
+            h6.card-subtitle.mb-2.text-muted N/A | 2500 RUB per hour
+            p.card-text The most exciting course we have to offer. If you feel like riding a bike is not enough for you (and you already have a good experience), you can try to do stuntriding: a stunning art of showing your skills with tricks on two wheels.
+            a.btn.btn-primary(href="/enroll") Enroll
+  .jumbotron.courses-cta
+    .container
+      h1.display-4 Enroll to our course
+      != messages('message', locals) 
+      if errors
+        each error in errors 
+          .alert.alert-danger #{error.msg}
+      if user 
+        form.enroll-form(method='POST', action='/enroll')
+          select.enroll-select(name="name")
+            option.enroll-option(value="trial") Trial Class — see if motorcycle's for you
+            option.enroll-option(value="standard") Standard driver licence training
+            option.enroll-option(value="express") Express driver licence training
+            option.enroll-option(value="extended") Extended driver licence training
+            option.enroll-option(value="additional") Additional hours of any course
+            option.enroll-option(value="safe") Safe Riding Class 
+            option.enroll-option(value="city") City Class 
+            option.enroll-option(value="stuntriding") Stuntriding
+          input#datepicker(name="date" type='text' placeholder='Pick a time')
+          input.btn.btn-primary(type='submit', value='Submit')
+        p.lead Please, note that standard lesson length is 2 hours. It is up to you, however, how many hours you want to practice on the chosen date.
+      else
+        p.lead In order to enroll, you must be logged in.
+        a.form-switcher(href="#") Don't have an account?
+        form.login-form(method='POST', action='/users/login')
+          #form-group
+              input.form-control(name='username', type='text', placeholder='Username')
+          #form-group
+              input.form-control(name='password', type='password', placeholder='Password')
+          input.btn.btn-primary(type='submit', value='Submit')
+        form.register-form(method='POST', action='/users/register')
+          #form-group
+              input.form-control(name='name', type='text', placeholder='Name')
+          #form-group
+              input.form-control(name='email', type='email', placeholder='Email')
+          #form-group
+              input.form-control(name='username', type='text', placeholder='Username')
+          #form-group
+              input.form-control(name='password', type='password', placeholder='Password')
+          #form-group
+              input.form-control(name='password2', type='password', placeholder='Confirm Password')
+          #form-group
+              input.form-control(name='number', type='text', placeholder='Your Phone Number')
+          input.btn.btn-primary(type='submit', value='Submit')

@@ -1,0 +1,16 @@
+extends template
+block content
+  h1 #{title}
+  ul
+    each a in courses
+      li 
+        a(href='/courses/'+a.id)= a.name
+  
+  form(method='POST', action='/courses/add')
+    #form-group
+        label Name:
+        input.form-control(name='name', type='text')
+    #form-group
+        label Length:
+        input.form-control(name='length', type='text')
+    input.btn.btn-primary(type='submit', value='submit')

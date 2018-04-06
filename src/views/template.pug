@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title Motorcycle School on Airfield | #{title}
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css")
+    link(href='bower/air-datepicker/dist/css/datepicker.min.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/menu.css')
+  body
+    // Navigation start
+    div.container-shade
+    div.pancakes
+      span.oi.oi-menu
+    div.navigation
+      p.navigation-item 
+        a(href='/enroll') 
+          <span class="oi oi-file"></span> Enroll 
+      p.navigation-item 
+        a(href='/about') 
+          <span class="oi oi-compass"></span> About 
+      p.navigation-item 
+        a(href='/contacts') 
+          <span class="oi oi-map-marker"></span> Contacts 
+      hr
+      if user
+        p.navigation-item
+          a(href='/users/logout') 
+            <span class="oi oi-account-logout"></span> Logout
+      else
+        p.navigation-item
+          a(href='/users/register') 
+            <span class="oi oi-key"></span> Register
+        p.navigation-item
+          a(href='/users/login') 
+            <span class="oi oi-account-login"></span> Login 
+    // Navigation end
+    block content
+      
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    script(src='bower/air-datepicker/dist/js/datepicker.min.js')
+    script(src='bower/air-datepicker/dist/js/i18n/datepicker.en.js')
+    script(src="/js/datepicker.js")
+    script(src="/js/script.js")
+    
